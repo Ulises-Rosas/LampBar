@@ -18,9 +18,6 @@ parser.add_argument('-r',
 
 args = parser.parse_args()
 
-# path = "/Users/admin/Desktop/geneTable/Adenocephalus_pacificus/18SrRNA"
-# os.chdir(path)
-
 def fas_to_dic(x):
     ##fasta file is read
     file = open(x)
