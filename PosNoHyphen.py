@@ -62,7 +62,7 @@ def fas_to_dic(x):
 
 complete_aln = fas_to_dic(str(args.a))
 
-pos     = open( str(args.p) ).readline().replace("\n", "")
+pos     = "|".join( [ "^%s$" % i for i in open( str(args.p) ).readline().replace("\n","").split(",") ] )
 
 lengths = { i:list(j.replace("-","")).__len__() for i,j in complete_aln.items() }
 s_item  = sorted( lengths.items(), key = operator.itemgetter(1) )[-1][0]
@@ -76,7 +76,7 @@ if args.r:
     for p,q in enumerate(complete_aln[s_item]):
         if q != "-":
             old_pos += 1
-            if re.findall( "(" + pos.replace(",","|") + ")" , str(old_pos)):
+            if re.findall( "(" + pos + ")" , str(old_pos)):
                 new_pos.append(p)
 
 else:
@@ -86,7 +86,7 @@ else:
     for p, q in enumerate(complete_aln[s_item]):
         if q != "-":
             tmp_pos += 1
-            if re.findall("(" + pos.replace(",", "|") + ")", str(p)):
+            if re.findall("(" + pos + ")", str(p)):
                 new_pos.append(tmp_pos)
 
 
