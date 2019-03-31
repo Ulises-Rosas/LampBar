@@ -77,7 +77,7 @@ if args.r:
         if q != "-":
             old_pos += 1
             if re.findall( "(" + pos + ")" , str(old_pos)):
-                new_pos.append(p)
+                new_pos.append(p + 1)
 
 else:
     new_pos = []
@@ -86,7 +86,7 @@ else:
     for p, q in enumerate(complete_aln[s_item]):
         if q != "-":
             tmp_pos += 1
-            if re.findall("(" + pos + ")", str(p)):
+            if re.findall("(" + pos + ")", str(p + 1)):
                 new_pos.append(tmp_pos)
 
 
