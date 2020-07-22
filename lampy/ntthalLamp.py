@@ -239,7 +239,7 @@ for lamp in file:
                 d_issue = [a for a,b in libLamp.items() if re.findall("(%s)" % "|".join(d), b)]
                 dG      = ",".join([i for i in alldG if i < float(args.Dd)])
 
-                explanations.append("dG of %s + %s < %S (%s)" % (d_issue[0], d_issue[1], float(args.Dd), dG))
+                explanations.append("dG of %s + %s < %s (%s)" % (d_issue[0], d_issue[1], float(args.Dd), dG))
 
             elif not anyLesser_dG and anyGreater_Tm:
 
@@ -255,7 +255,7 @@ for lamp in file:
                 Tm = ",".join([i for i in allTm if i > float(args.dt) ])
                 dG = ",".join([i for i in alldG if i < float(args.Dd) ])
 
-                explanations.append("dG of %s + %s < %s (%s) and Tm of %s + %s > 40 (%s)" % (d_issue[0], d_issue[1], float(args.Dd), dG,
+                explanations.append("dG of %s + %s < %s (%s) and Tm of %s + %s > %s (%s)" % (d_issue[0], d_issue[1], float(args.Dd), dG,
                                                                                              d_issue[0], d_issue[1], float(args.dt), Tm))
 
     tmp_ex = ",".join(explanations)
