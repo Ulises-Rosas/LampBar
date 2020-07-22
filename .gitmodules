@@ -1,0 +1,3 @@
+[submodule "lamperl/ipc-system-simple"]
+	path = lamperl/ipc-system-simple
+	url = https://github.com/pjf/ipc-system-simple.git
